@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+message HealthRecord {
+  string recordID = 1;
+  string name = 2;
+  int32 age = 3;
+  string gender = 4;
+  float weight = 5;
+  float height = 6;
+  string condition = 7;
+}
+
+message HealthRecordList {
+  repeated HealthRecord healthRecords = 1;
+}
+
+message HealthRecordId {
+  string recordID = 1;
+}
+
+message Empty {}
+
+service HealthTracker {
+  rpc CreateRecord(HealthRecord) returns (HealthRecord) {}
+  rpc ReadRecord(HealthRecordId) returns (HealthRecord) {}
+  rpc UpdateRecord(HealthRecord) returns (HealthRecord) {}
+  rpc DeleteRecord(HealthRecordId) returns (Empty) {}
+}

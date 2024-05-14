@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Tracker</title>
+</head>
+<body>
+  <h1>Health Tracker</h1>
+  <form id="healthForm">
+    <label for="recordID">Record ID:</label>
+    <input type="number" id="recordID" name="recordID" required><br><br>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required><br><br>
+    <label for="gender">Gender:</label>
+    <input type="text" id="gender" name="gender" required><br><br>    
+    <label for="weight">Weight (kg):</label>
+    <input type="number" id="weight" name="weight" required><br><br>
+    <label for="height">Height (cm):</label>
+    <input type="number" id="height" name="height" required><br><br>
+    <label for="condition">Condition:</label>
+    <input type="text" id="condition" name="condition" required><br><br>
+    <button type="submit">Create Record</button>
+  </form>
+  <div id="response"></div>
+
+  <h2>Read Record</h2>
+  <form id="readForm">
+    <label for="recordId">Record ID:</label>
+    <input type="number" id="recordId" name="recordId" required><br><br>
+    <button type="button" onclick="readRecord()">Read Record</button>
+  </form>
+
+  <h2>Update Record</h2>
+  <form id="updateForm">
+    <label for="updateRecordID">Record ID:</label>
+    <input type="number" id="updateRecordID" name="updateRecordID" required><br><br>
+    <button type="button" onclick="updateRecord()">Update Record</button>
+  </form>
+
+  <h2>Delete Record</h2>
+  <form id="deleteForm">
+    <label for="deleteRecordID">Record ID:</label>
+    <input type="number" id="deleteRecordID" name="deleteRecordID" required><br><br>
+    <button type="button" onclick="deleteRecord()">Delete Record</button>
+  </form>
+
+  <script src="client.js"></script>
+</body>
+</html>
