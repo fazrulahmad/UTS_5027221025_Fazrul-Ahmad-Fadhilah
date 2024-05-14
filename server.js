@@ -109,6 +109,11 @@ grpcserver.addService(healthProto.HealthTracker.service, {
         HealthRecord.findByIdAndUpdate(call.request.id, call.request, { new: true })
             .then(record => callback(null, record))
             .catch
+    },
+    DeleteRecord: (call, callback) => {
+        HealthRecord.findByIdAndDelete(call.request.id)
+            .then(() => callback(null, { message: 'Record deleted successfully' }))
+            .catch(err => callback(err, null));
     }
 });
 
